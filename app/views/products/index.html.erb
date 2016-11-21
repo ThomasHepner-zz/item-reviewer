@@ -1,7 +1,7 @@
 <div>
   <button id="add-product"><span>+ </span>Add product</button>
 </div>
-<div>
+<div class="products">
   <% @products.each do |product| %>
     <ul>
       <li>
@@ -10,20 +10,4 @@
     </ul>
   <% end %>
 </div>
-<%# TODO: move this into a partial view %>
-<div class="modal" id="new-product-modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">x</span>
-      <h2>Modal Header</h2>
-    </div>
-    <div class="modal-body">
-      <p>
-        Some text on the modal
-      </p>
-    </div>
-    <div class="modal-footer">
-      <h3>Modal footer</h3>
-    </div>
-  </div>
-</div>
+<%= render partial: 'new' %>

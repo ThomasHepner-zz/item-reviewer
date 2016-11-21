@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   def index
     # TODO: add pagination of some sort
     @products = Product.all
+    @product = Product.new
   end
 
   def show
@@ -16,11 +17,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    if @product.save
-      flash[:success] = 'Product successfully created.'
-    else
-      render 'new'
+    @product = Product.new(name: params[:name], description: params[:description])
+
+    respond_to do |format|
+      if @product.save
+        format.html { redirect_to products_url, notice: 'Product was successfully created.' }
+        format.json { render json: @product.to_json }
+      else
+        format.html { render action: 'index' }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
     end
   end
 
