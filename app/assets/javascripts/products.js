@@ -17,18 +17,18 @@ var products = function() {
     }
   }
 
-  $('#new-product-modal form').submit(function(e) {
+  $('.new-product-modal form').submit(function(e) {
     e.preventDefault();
 
     var url = $(this).attr('action');
-    var name = $('#new-product-modal form input#product_name').val();
-    var description = $('#new-product-modal form textarea#product_description').val();
+    var name = $('.new-product-modal form input#product_name').val();
+    var description = $('.new-product-modal form textarea#product_description').val();
 
     $.post(url, { name: name, description: description }, function(data) {
       debugger
       modal.style.display = 'none';
-      var name = $('#new-product-modal form input#product_name').val("");
-      var description = $('#new-product-modal form textarea#product_description').val("");
+      var name = $('.new-product-modal form input#product_name').val("");
+      var description = $('.new-product-modal form textarea#product_description').val("");
     });
   });
 }
