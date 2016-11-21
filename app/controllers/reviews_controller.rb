@@ -9,13 +9,17 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    # TODO: test
-    @review = Review.new(review_params)
-    if @review.save
-      flash[:success] = 'Successfully added review.'
-      redirect_to @product
-    else
-      render 'new'
+    @review = Review.new(content: params[:content], rating: params[:rating],
+                         product_id: params[:product_id])
+    @product = Product.find(params[:product_id])
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to @product }
+        format.json { render json: @product.to_json }
+      else
+        format.html { redirect_to @product }
+        format.json { render json: @review.errors, status: :unprocessable_entity }
+      end
     end
   end
 

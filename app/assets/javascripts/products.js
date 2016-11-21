@@ -25,10 +25,23 @@ var products = function() {
     var description = $('.new-product-modal form textarea#product_description').val();
 
     $.post(url, { name: name, description: description }, function(data) {
-      debugger
       modal.style.display = 'none';
       var name = $('.new-product-modal form input#product_name').val("");
       var description = $('.new-product-modal form textarea#product_description').val("");
+    });
+  });
+
+  $('.new-review-modal form').submit(function(e) {
+    e.preventDefault();
+
+    var url = $(this).attr('action');
+    var content = $('.new-review-modal form textarea#review_content').val();
+    var rating = $('.new-review-modal form input#rating-slider').val();
+
+    $.post(url, { content: content, rating: rating }, function(data) {
+      modal.style.display = 'none';
+      var content = $('.new-review-modal form textarea#review_content').val("");
+      var rating = $('.new-review-modal form input#rating-slider').val("");
     });
   });
 }
