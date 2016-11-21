@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(content: params[:content], rating: params[:rating],
-                         product_id: params[:product_id])
+                         product_id: params[:product_id], user_id: current_user.id)
     @product = Product.find(params[:product_id])
     respond_to do |format|
       if @review.save

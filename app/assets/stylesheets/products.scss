@@ -120,10 +120,10 @@ textarea {
     font-size: 20px;
     line-height: 1.8;
     appearance: none;
-    box-shadow: none;
     border-radius: 3px;
     background-color: #E73359;
     border: none;
+    box-shadow: -1px 1px 10px #aaaaaa;
 }
 
 .product-container a {
@@ -209,4 +209,24 @@ textarea {
     padding: 2px 16px;
     background-color: #FFFFFA;
     color: white;
+}
+
+.content {
+  font-style: italic;
+  font-size: 24px;
+}
+.rating {
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.review {
+  display: inline-block;
+  margin: 10 10px 10 10;
+  padding: 10px 15px;
+  font-size: 20px;
+  appearance: none;
+  background-color: #FFFFFA;
+  border: none;
+  box-shadow: -1px 1px 10px #aaaaaa;
 }

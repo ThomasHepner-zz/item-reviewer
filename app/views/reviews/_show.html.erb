@@ -1,5 +1,13 @@
-<div>
-  <p>
-    <%= review.content %>
-  </p>
+<div class="center review">
+  <div class="content">
+    <p>
+      <%= review.content %>
+    </p>
+  </div>
+  <div class="rating">
+    <p><%= review.rating %> star<%= review.rating > 1 ? "s" : "" %></p>
+  </div>
+  <div class="author">
+    <strong>Author: <span><%= review.user.email %></span></strong>
+  </div>
 </div>
