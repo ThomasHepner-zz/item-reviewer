@@ -1,13 +1,19 @@
-<div>
-  <button id="new-form"><span>+ </span>Add product</button>
+<div class="row">
+  <div class="jumbo center">
+    <h1>Item Reviewer</h1>
+    <h2>All products</h2>
+  </div>
 </div>
-<div class="products">
-  <% @products.each do |product| %>
-    <ul>
-      <li>
+<div class="row">
+  <button class="center" id="new-form"><span>+ </span>Add product</button>
+</div>
+<div class="row">
+  <div class="center products">
+    <% @products.each do |product| %>
+      <div class="product-container">
         <%= link_to product.name, product %>
-      </li>
-    </ul>
-  <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
 <%= render partial: 'new' %>

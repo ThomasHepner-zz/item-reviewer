@@ -1,20 +1,148 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+html {
+    font-family: "Open Sans", sans-serif;
 }
 
+body {
+    background-color: #EEF5DB;
+}
+
+h1 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: normal;
+    line-height: 39.6px;
+    text-transform: uppercase;
+    color: #E73359;
+}
+
+h2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: normal;
+    line-height: 39px;
+    text-transform: none;
+    color: #E73359;
+}
+
+a {
+    color: #05668D;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00A0C6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 1.8;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0);
+    color: #05668D;
+    border: solid 5px #05668D;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+textarea {
+  width: 600px;
+  height: 120px;
+  padding: 5px;
+  font-family: "Open Sans", sans-serif;
+  border: 3px solid #cccccc;
+}
+
+.jumbo {
+    font-size: 50px;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.row {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0,0,0);
+    /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+    /* Black w/ opacity */
+    border-radius: 5px;
+}
+
+.product-container {
+    display: inline-block;
+    margin: 10 10px 10 10;
+    padding: 10px 15px;
+    font-size: 20px;
+    line-height: 1.8;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 3px;
+    background-color: #E73359;
+    border: none;
+}
+
+.product-container a {
+    color: #FFFFFA;
+}
+
+.product-container a:hover {
+    color: #EEF5DB;
+}
+
+.center .product-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.description {
+  font-weight: 200;
+  font-style: italic;
+}
 /* Modal Content */
 .modal-content {
     position: relative;
@@ -27,20 +155,31 @@
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
-
 /* Add Animation */
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
+    from {
+        top: -300px;
+        opacity: 0;
+    }
 
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
 @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
+    from {
+        top: -300px;
+        opacity: 0;
+    }
 
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
 /* The Close Button */
 .close {
     color: white;
@@ -49,8 +188,8 @@
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:focus,
+.close:hover {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -58,14 +197,16 @@
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #FFFFFA;
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+    padding: 2px 16px;
+}
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
+    background-color: #FFFFFA;
     color: white;
 }

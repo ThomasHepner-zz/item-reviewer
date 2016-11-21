@@ -46,4 +46,5 @@ var products = function() {
   });
 }
 $(document).ready(products);
-$(document).load(products);
+$(document).on('page:load', products);
+$(document).on('turbolinks:load', products);

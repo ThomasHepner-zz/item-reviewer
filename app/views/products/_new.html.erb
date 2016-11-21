@@ -1,15 +1,23 @@
 <div class="modal new-product-modal" id="form-modal">
   <%= form_for @product, url: products_path, format: :json do |f| %>
-    <div class="modal-content">
+    <div class="modal-content center">
       <div class="modal-header">
         <span class="close">x</span>
         <h2>New Product</h2>
       </div>
       <div class="modal-body">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <%= f.label :description %>
-        <%= f.text_area :description %>
+        <div class="row">
+          <%= f.label :name %>
+        </div>
+        <div class="row">
+          <%= f.text_field :name %>
+        </div>
+        <div class="row">
+          <%= f.label :description %>
+        </div>
+        <div class="row">
+          <%= f.text_area :description %>
+        </div>
       </div>
       <div class="modal-footer">
         <%= f.submit 'Submit', class: 'submit' %>
