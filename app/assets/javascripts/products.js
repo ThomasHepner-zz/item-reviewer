@@ -1,6 +1,6 @@
 var products = function() {
-  var modal = document.getElementById('new-product-modal');
-  var button = document.getElementById('add-product');
+  var modal = document.getElementById('form-modal');
+  var button = document.getElementById('new-form');
   var close = document.getElementsByClassName('close')[0];
 
   button.onclick = function() {

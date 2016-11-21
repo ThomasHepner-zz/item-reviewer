@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def show
     @reviews = @product.reviews
+    @review = Review.new
   end
 
   def new
@@ -17,7 +18,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(name: params[:name], description: params[:description])
+    @product = Product.new(name: params[:name],
+                           description: params[:description])
 
     respond_to do |format|
       if @product.save
