@@ -1,0 +1,10 @@
+<h1><%= @product.name %></h1>
+<h2><%= @product.description %></h2>
+<div>
+  <a href="#"><span>+ </span>Add review</a>
+</div>
+<div>
+  <% @reviews.each do |review| %>
+    <%= render partial: 'reviews/show', locals: { review: review } %>
+  <% end %>
+</div>

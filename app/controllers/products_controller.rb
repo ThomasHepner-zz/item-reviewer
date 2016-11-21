@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show]
+  before_action :authenticate_user!
 
   def index
     # TODO: add pagination of some sort
@@ -7,6 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @reviews = @product.reviews
   end
 
   def new
