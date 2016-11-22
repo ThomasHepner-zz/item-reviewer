@@ -1,3 +1,8 @@
+<% if user_signed_in? %>
+  <%= link_to("Logout (#{current_user.email})", destroy_user_session_path, :method => :delete) %>
+<% else %>
+  <%= link_to('Login', new_user_session_path)  %>
+<% end %>
 <div class="row">
   <div class="jumbo center">
     <h1>Item Reviewer</h1>
