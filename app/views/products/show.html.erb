@@ -1,18 +1,20 @@
 <%= link_to 'Back to products', products_path %>
-<div class="row">
-  <div class="jumbo center">
-    <h1><%= @product.name %></h1>
+<div class="center-container">
+  <div class="row">
+    <div class="jumbo center">
+      <h1><%= @product.name %></h1>
+    </div>
   </div>
-</div>
-<div class="row center description">
-  <p><%= @product.description %></p>
-</div>
-<div class="row center">
-  <button id="new-form"><span>+ </span>Add review</button>
-</div>
-<% @reviews.each do |review| %>
+  <div class="row center description">
+    <p><%= @product.description %></p>
+  </div>
   <div class="row center">
-    <%= render partial: 'reviews/show', locals: { review: review } %>
+    <button id="new-form"><span>+ </span>Add review</button>
   </div>
-<% end %>
-<%= render partial: 'reviews/new' %>
+  <% @reviews.each do |review| %>
+    <div class="row center">
+      <%= render partial: 'reviews/show', locals: { review: review } %>
+    </div>
+  <% end %>
+  <%= render partial: 'reviews/new' %>
+</div>
